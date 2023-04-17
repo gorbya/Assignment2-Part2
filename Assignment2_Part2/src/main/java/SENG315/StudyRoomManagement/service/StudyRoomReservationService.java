@@ -40,7 +40,7 @@ public class StudyRoomReservationService {
 			
 		try {
 			
-			message = createAndUpdateReservation(inputParms);
+			message = populateAndUpdateReservation(inputParms);
 
 				result.put("message", message);
 		} catch (JSONException e) {
@@ -51,7 +51,7 @@ public class StudyRoomReservationService {
 		}
 
 
-	private static String createAndUpdateReservation(JSONObject inputParms) {
+	private static String populateAndUpdateReservation(JSONObject inputParms) {
 		String message;
 		int srmsID = inputParms.getInt("srmsID");
 		int studentID = inputParms.getInt("studentID");
