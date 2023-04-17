@@ -1,11 +1,9 @@
 
-package SENG315.StudyRoomManagement.service;
+package SENG315.StudyRoomManagement.model;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import SENG315.StudyRoomManagement.model.StudyRoomReservation;
 
 public class StudyRoomReservationService {
 
@@ -65,6 +63,17 @@ public class StudyRoomReservationService {
 			
 		StudyRoomReservation SRReservation = new StudyRoomReservation();
 
+		setReservation(srmsID, studentID, studentName, contactNumber, estDepartTime, estNumStudents, roomNum,
+				arrivalTime, departTime, SRReservation);
+		
+		message = SRReservation.updateReservation();
+		return message;
+	}
+
+
+	private static void setReservation(int srmsID, int studentID, String studentName, String contactNumber,
+			String estDepartTime, int estNumStudents, int roomNum, String arrivalTime, String departTime,
+			StudyRoomReservation SRReservation) {
 		SRReservation.setSrmsID(srmsID);
 		SRReservation.setStudentID(studentID);
 		SRReservation.setStudentName(studentName);
@@ -74,9 +83,6 @@ public class StudyRoomReservationService {
 		SRReservation.setRoomNum(roomNum);
 		SRReservation.setArrivalTime(arrivalTime);
 		SRReservation.setDepartTime(departTime);
-		
-		message = SRReservation.updateReservation();
-		return message;
 	}
 	 
 	public static JSONObject addReservation(JSONObject inputParms) {

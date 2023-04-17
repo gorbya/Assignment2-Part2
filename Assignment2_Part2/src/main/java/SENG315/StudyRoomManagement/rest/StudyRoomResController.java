@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import SENG315.StudyRoomManagement.model.StudyRoomReservation;
-import SENG315.StudyRoomManagement.service.StudyRoomReservationService;
+import SENG315.StudyRoomManagement.model.StudyRoomReservationService;
 
 @RestController
 @RequestMapping("/studyroomreservations")
